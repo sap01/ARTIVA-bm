@@ -122,13 +122,25 @@ init.path <- getwd()
 output.dirname <- paste('asset/output', format(Sys.time(), "%Y%m%d%H%M%S"), sep = '')
 output.dirname <- paste(init.path, output.dirname, sep = '/')
 
-if(.Platform$OS.type == "unix") {
-  if(! output.dirname %in% system("ls" ,intern=TRUE))
-  {
+if (.Platform$OS.type == 'unix') {
+  if(! output.dirname %in% system("ls" ,intern=TRUE)) {
     system(paste('mkdir ', output.dirname, sep = ''))
   }
-} else{# if(.Platform$OS.type == "unix"){
-  shell(paste('mkdir ', output.dirname, sep = ''), intern = TRUE, mustWork =NA)
+} else if (.Platform$OS.type == 'windows') {
+  
+  ## Convert directory path to canonical form for Windows OS.
+  ## It raises the warning if the directory does not exist, which
+  ## is expected. Therefore, please ignore the warning.
+  output.dirname <-
+    normalizePath(output.dirname,
+                  winslash = '\\',
+                  mustWork = NA)
+  
+  shell(
+    paste('mkdir ', output.dirname, sep = ''),
+    intern = TRUE,
+    mustWork = TRUE
+  )
 }
 ##------------------------------------------------------------
 ## End: Create the output directory

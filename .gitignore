@@ -1,2 +1,25 @@
+# History files
+.Rhistory
+.Rapp.history
+
 packrat/lib*/
 .Rproj.user
+
+## Packrat bundles
+packrat/bundles/
+
+## Data files
+asset/InSilico*.tsv
+asset/edi-data*.tsv
+asset/DmLc*.RData
+
+## True network files
+asset/DREAM3GoldStandard*.RData
+asset/edi.net.*
+
+## Output directories
+asset/output*/
+
+## nohup files
+nohup*.out
+

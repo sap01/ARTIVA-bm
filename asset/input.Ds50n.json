@@ -1,0 +1,10 @@
+{ 
+   "input.data.filename": "InSilicoSize50-Yeast1-trajectories.tsv",
+   "num.timepts": 21,
+   "num.time.series": 23,
+   "true.net.filename": "DREAM3GoldStandard_InSilicoSize50_Yeast1_TrueNet.RData",
+   "max.fanin": null,
+   "num.itns": 50000,
+   "max.num.cp": 15,
+   "edge.post.prob.threshold": 0.5
+}
