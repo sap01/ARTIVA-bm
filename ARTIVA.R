@@ -56,7 +56,7 @@ library(ARTIVA)
 ##------------------------------------------------------------
 input.args <- commandArgs(trailingOnly=TRUE)
 
-if (length(args) != 1)
+if (length(input.args) != 1)
 {
   stop("Exactly one input file must be supplied.", call.=FALSE)
 }
